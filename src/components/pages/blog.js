@@ -90,7 +90,7 @@ class Blog extends Component {
 
     axios
       .get(
-        `https://mariopedregon.devcamp.space/portfolio/portfolio_blogs?page=${
+        `https://jordan.devcamp.space/portfolio/portfolio_blogs?page=${
           this.state.currentPage
         }`,
         {
@@ -98,7 +98,6 @@ class Blog extends Component {
         }
       )
       .then(response => {
-        console.log("gettting", response.data);
         this.setState({
           blogItems: this.state.blogItems.concat(response.data.portfolio_blogs),
           totalCount: response.data.meta.total_records,
@@ -147,7 +146,7 @@ class Blog extends Component {
         {this.props.loggedInStatus === "LOGGED_IN" ? (
           <div className="new-blog-link">
             <a onClick={this.handleNewBlogClick}>
-              <FontAwesomeIcon icon="car" />
+              <FontAwesomeIcon icon="plus-circle" />
             </a>
           </div>
         ) : null}
